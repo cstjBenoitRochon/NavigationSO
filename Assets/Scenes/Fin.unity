@@ -205,7 +205,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 25450934}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 40f430fad138dd54a9989ad4f04e12df, type: 2}
+        m_TargetAssemblyTypeName: InfosNavig, Assembly-CSharp
+        m_MethodName: AllerMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &25450934
 MonoBehaviour:
   m_ObjectHideFlags: 0

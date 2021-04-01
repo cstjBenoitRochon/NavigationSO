@@ -28,7 +28,7 @@ public class Tresor : MonoBehaviour
     /// </summary>
     void OnMouseDown()
     {
-        /*ici*/ //declenche la methode RecupererTresor avec le Singleton de GestNiveau
-        /*ici*/ //detruit le tresor
+        GestNiveau.instance.RecupererTresor(_valeur); //declenche la methode RecupererTresor avec le Singleton de GestNiveau
+        Destroy(gameObject); //detruit le tresor
     }
 }

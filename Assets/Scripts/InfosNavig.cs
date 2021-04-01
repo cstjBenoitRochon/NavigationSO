@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/*ici*/  //importe le gestionnaire de scene
+using UnityEngine.SceneManagement;  //importe le gestionnaire de scene
 
 /// <summary>
 /// Classe ScriptableObject pour gerer les infos de la navigation.
@@ -19,11 +19,11 @@ public class InfosNavig : ScriptableObject //preciser que c'est un S.O.
     [Header("Valeurs en cours")] //Entete de section pour les Valeurs en cours (pendant la partie)
     [SerializeField] private int _niveau; //int, le numero du niveau en cours
 
-    /*ici*/  //[Header("Valeurs permanentes")] //Entete de section pour les Valeurs «permanentes»
-    /*ici*/  //int, le buildIndex du menu
-    /*ici*/  //int, le buildIndex du niveau 1
-    /*ici*/  //int, le nombre de scenes de type niveau dans le build
-    /*ici*/  //int, le buildIndex de la scene de fin
+    [Header("Valeurs permanentes")] //Entete de section pour les Valeurs «permanentes»
+    [SerializeField] private int _buildIndexMenu = 0;  //int, le buildIndex du menu
+    [SerializeField] private int _buildIndexN1 = 1;  //int, le buildIndex du niveau 1
+    [SerializeField] private int _nbScenesDuBuild = 2; //int, le nombre de scenes de type niveau dans le build
+    [SerializeField] private int _buildIndexFin = 3;  //int, le buildIndex de la scene de fin
     //FIN DES CHAMPS SERIALISES
 
     public int niveau { get => _niveau; set => _niveau = value; } //accesseur et mutateur du niveau en cours
@@ -33,7 +33,7 @@ public class InfosNavig : ScriptableObject //preciser que c'est un S.O.
     /// </summary>
     public void Initialiser()
     {
-        /*ici*/  //change la valeur du niveau par la valeur par defaut (ini)
+        _niveau = _niveauIni;  //change la valeur du niveau par la valeur par defaut (ini)
     }
 
     /// <summary>
@@ -41,9 +41,9 @@ public class InfosNavig : ScriptableObject //preciser que c'est un S.O.
     /// </summary>
     public void AllerNiveauSuivant()
     {
-        /*ici*/  //incremente le numero du niveau
-        /*ici*/  //int indexSceneSuiv = _buildIndexN1+((_niveau-1) % _nbScenesDuBuild); //calcule le buildIndex de la scene suivante
-        /*ici*/  //va a la scene suivante
+        _niveau++;  //incremente le numero du niveau
+        int indexSceneSuiv = _buildIndexN1+((_niveau-1) % _nbScenesDuBuild); //calcule le buildIndex de la scene suivante
+        SceneManager.LoadScene(indexSceneSuiv);  //va a la scene suivante
     }
 
     /// <summary>
@@ -51,7 +51,7 @@ public class InfosNavig : ScriptableObject //preciser que c'est un S.O.
     /// </summary>
     public void AllerMenu()
     {
-        /*ici*/  //va a la scene du menu
+        SceneManager.LoadScene(_buildIndexMenu);  //va a la scene du menu
     }
 
     /// <summary>
@@ -59,6 +59,6 @@ public class InfosNavig : ScriptableObject //preciser que c'est un S.O.
     /// </summary>
     public void AllerFin()
     {
-        /*ici*/  //va a la scene de la fin
+        SceneManager.LoadScene(_buildIndexFin);  //va a la scene de la fin
     }
 }

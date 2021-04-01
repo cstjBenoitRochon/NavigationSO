@@ -300,8 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7a37d88028c794ba2cc6b39b418e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _iJoueur: {fileID: 11400000, guid: 95c10dd114a3cab4fb279403c70b39d1, type: 2}
-  _iNavig: {fileID: 11400000, guid: 1dd965d4ac32159448afd78afb8c7aee, type: 2}
+  _iJoueur: {fileID: 11400000, guid: 0fdf90abbc02ded468cc8e9b4dfb3411, type: 2}
+  _iNavig: {fileID: 11400000, guid: 40f430fad138dd54a9989ad4f04e12df, type: 2}
   _champNiveau: {fileID: 323332210}
   _champScore: {fileID: 1390993232}
   _champVie: {fileID: 576604058}
